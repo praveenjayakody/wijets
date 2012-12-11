@@ -7,6 +7,7 @@ Compiling
 ========
 
 Project originally coded in VB.NET 2005 Express.
+Download the Moviewer binaries (the referenced xButton.dll and WMPlayer Interop DLLs) <a href="http://getfreestuff.zxq.net/WiJets/pHosPhine/dev.htm" target="_blank">at official Moviewer Dev page</a> 
 
 TODO
 =====
