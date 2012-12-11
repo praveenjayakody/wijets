@@ -20,6 +20,12 @@ Public Class Main
                 Next
                 wmp.Width = Me.ClientRectangle.Width - sidebar.Width
                 btnMore.Left = wmp.Left - 2
+                ''''show the btnMovie buttons. Anyone know a more elegant way, other than repetition???
+                ''''why should they be manually turned visible? 
+                ''''Try running this by visible=true by default and click on the btnMore button
+                btnMovie1.Visible = True
+                btnMovie2.Visible = True
+                btnMovie3.Visible = True
             End If
         Else
             tmrMouseCheck.Enabled = True
@@ -29,10 +35,13 @@ Public Class Main
             wmp.Width = Me.ClientRectangle.Width
             sidebar.Left = -sidebar.Width
             btnMore.Left = -1
-            btnMore.Image = Global.Moviewer.My.Resources.Resources.menu
+            btnMore.Image = My.Resources.menu
             btnMore.ImageAlign = ContentAlignment.MiddleCenter
             cont_main.Refresh()
             btnMore.nTransparency = 0
+            btnMovie1.Visible = False
+            btnMovie2.Visible = False
+            btnMovie3.Visible = False
         End If
     End Sub
 
@@ -49,10 +58,18 @@ Public Class Main
             btnMove.Left = Me.ClientRectangle.Width - btnMove.Width
             btnExit.Top = Me.ClientRectangle.Height - btnIkonize.Height
             btnPin.Top = btnExit.Top
+            btnBrowse.Top = btnExit.Top
             Me.Refresh()
         Else
             Call btnMore_Click(Me, New System.EventArgs)
         End If
+        'Someway to call these individually...
+        btnMovie1.Left = 0
+        btnMovie2.Left = 0
+        btnMovie3.Left = 0
+        btnMovie1.Width = sidebar.Width
+        btnMovie2.Width = sidebar.Width
+        btnMovie3.Width = sidebar.Width
     End Sub
 
     Private Sub Main_ResizeEnd(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.ResizeEnd
@@ -147,5 +164,13 @@ Public Class Main
             blnIsPinned = False
         End If
         Me.Refresh()
+    End Sub
+
+    Private Sub btnBrowse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBrowse.Click
+        MsgBox("Should Put code to browse for video files ;)", MsgBoxStyle.MsgBoxHelp)
+    End Sub
+
+    Private Sub sidebar_LocationChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles sidebar.LocationChanged
+        btnExit.Refresh()
     End Sub
 End Class

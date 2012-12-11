@@ -25,6 +25,8 @@ Partial Class Main
         Me.btnMove = New xButton.xButton
         Me.Button2 = New System.Windows.Forms.Button
         Me.sidebar = New System.Windows.Forms.Panel
+        Me.btnBrowse = New xButton.xButton
+        Me.btnMovie3 = New xButton.xButton
         Me.btnMovie2 = New xButton.xButton
         Me.btnMovie1 = New xButton.xButton
         Me.btnPin = New xButton.xButton
@@ -35,8 +37,6 @@ Partial Class Main
         Me.btnMore = New xButton.xButton
         Me.wmp = New AxWMPLib.AxWindowsMediaPlayer
         Me.tmrMouseCheck = New System.Windows.Forms.Timer(Me.components)
-        Me.btnMovie3 = New xButton.xButton
-        Me.btnBrowse = New xButton.xButton
         Me.cont_main.SuspendLayout()
         Me.sidebar.SuspendLayout()
         CType(Me.tbOpacity, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,6 +70,7 @@ Partial Class Main
         Me.btnMove.Radius = 1
         Me.btnMove.Size = New System.Drawing.Size(50, 50)
         Me.btnMove.TabIndex = 6
+        Me.btnMove.Text = "Move"
         Me.btnMove.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button2
@@ -85,12 +86,12 @@ Partial Class Main
         'sidebar
         '
         Me.sidebar.BackColor = System.Drawing.Color.White
+        Me.sidebar.Controls.Add(Me.btnExit)
         Me.sidebar.Controls.Add(Me.btnBrowse)
         Me.sidebar.Controls.Add(Me.btnMovie3)
         Me.sidebar.Controls.Add(Me.btnMovie2)
         Me.sidebar.Controls.Add(Me.btnMovie1)
         Me.sidebar.Controls.Add(Me.btnPin)
-        Me.sidebar.Controls.Add(Me.btnExit)
         Me.sidebar.Controls.Add(Me.btnIkonize)
         Me.sidebar.Controls.Add(Me.Label1)
         Me.sidebar.Controls.Add(Me.tbOpacity)
@@ -100,23 +101,60 @@ Partial Class Main
         Me.sidebar.Size = New System.Drawing.Size(159, 330)
         Me.sidebar.TabIndex = 8
         '
+        'btnBrowse
+        '
+        Me.btnBrowse.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.btnBrowse.ExcludedCorners = 12
+        Me.btnBrowse.Font = New System.Drawing.Font("Times New Roman", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
+        Me.btnBrowse.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.btnBrowse.Location = New System.Drawing.Point(52, 280)
+        Me.btnBrowse.Margin = New System.Windows.Forms.Padding(0, 0, 3, 0)
+        Me.btnBrowse.mmForeColor = System.Drawing.Color.White
+        Me.btnBrowse.Name = "btnBrowse"
+        Me.btnBrowse.nForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.btnBrowse.Radius = 1
+        Me.btnBrowse.Size = New System.Drawing.Size(50, 50)
+        Me.btnBrowse.TabIndex = 8
+        Me.btnBrowse.Text = " ..."
+        Me.btnBrowse.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'btnMovie3
+        '
+        Me.btnMovie3.AutoEllipsis = True
+        Me.btnMovie3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.btnMovie3.ExcludedCorners = 0
+        Me.btnMovie3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        Me.btnMovie3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.btnMovie3.Location = New System.Drawing.Point(3, 125)
+        Me.btnMovie3.Margin = New System.Windows.Forms.Padding(0, 3, 0, 0)
+        Me.btnMovie3.mmForeColor = System.Drawing.Color.White
+        Me.btnMovie3.Name = "btnMovie3"
+        Me.btnMovie3.nForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.btnMovie3.Radius = 0
+        Me.btnMovie3.Size = New System.Drawing.Size(153, 26)
+        Me.btnMovie3.TabIndex = 7
+        Me.btnMovie3.Text = "Starred Movie 3"
+        Me.btnMovie3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnMovie3.Visible = False
+        '
         'btnMovie2
         '
         Me.btnMovie2.AutoEllipsis = True
         Me.btnMovie2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
         Me.btnMovie2.ExcludedCorners = 0
         Me.btnMovie2.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.btnMovie2.ForeColor = System.Drawing.Color.Black
+        Me.btnMovie2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
         Me.btnMovie2.Location = New System.Drawing.Point(3, 96)
         Me.btnMovie2.Margin = New System.Windows.Forms.Padding(0, 3, 0, 0)
         Me.btnMovie2.mmForeColor = System.Drawing.Color.White
         Me.btnMovie2.Name = "btnMovie2"
-        Me.btnMovie2.nForeColor = System.Drawing.Color.Black
+        Me.btnMovie2.nForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
         Me.btnMovie2.Radius = 0
         Me.btnMovie2.Size = New System.Drawing.Size(153, 26)
         Me.btnMovie2.TabIndex = 6
         Me.btnMovie2.Text = "Starred Movie 2"
         Me.btnMovie2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnMovie2.Visible = False
         '
         'btnMovie1
         '
@@ -124,17 +162,18 @@ Partial Class Main
         Me.btnMovie1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
         Me.btnMovie1.ExcludedCorners = 12
         Me.btnMovie1.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.btnMovie1.ForeColor = System.Drawing.Color.Black
+        Me.btnMovie1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
         Me.btnMovie1.Location = New System.Drawing.Point(3, 67)
         Me.btnMovie1.Margin = New System.Windows.Forms.Padding(0, 3, 0, 0)
         Me.btnMovie1.mmForeColor = System.Drawing.Color.White
         Me.btnMovie1.Name = "btnMovie1"
-        Me.btnMovie1.nForeColor = System.Drawing.Color.Black
+        Me.btnMovie1.nForeColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
         Me.btnMovie1.Radius = 1
         Me.btnMovie1.Size = New System.Drawing.Size(153, 26)
         Me.btnMovie1.TabIndex = 5
         Me.btnMovie1.Text = "Starred Movie 1"
         Me.btnMovie1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnMovie1.Visible = False
         '
         'btnPin
         '
@@ -143,7 +182,7 @@ Partial Class Main
         Me.btnPin.Font = New System.Drawing.Font("Times New Roman", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
         Me.btnPin.ForeColor = System.Drawing.Color.White
         Me.btnPin.Image = Global.Moviewer.My.Resources.Resources.pinN
-        Me.btnPin.Location = New System.Drawing.Point(3, 280)
+        Me.btnPin.Location = New System.Drawing.Point(-1, 280)
         Me.btnPin.mmForeColor = System.Drawing.Color.White
         Me.btnPin.Name = "btnPin"
         Me.btnPin.nForeColor = System.Drawing.Color.White
@@ -155,18 +194,18 @@ Partial Class Main
         'btnExit
         '
         Me.btnExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.btnExit.ExcludedCorners = 12
+        Me.btnExit.ExcludedCorners = 10
         Me.btnExit.Font = New System.Drawing.Font("Times New Roman", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.btnExit.ForeColor = System.Drawing.Color.Black
+        Me.btnExit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(81, Byte), Integer))
         Me.btnExit.Location = New System.Drawing.Point(109, 280)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(0, 0, 3, 0)
         Me.btnExit.mmForeColor = System.Drawing.Color.White
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.nForeColor = System.Drawing.Color.Black
+        Me.btnExit.nForeColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(81, Byte), Integer))
         Me.btnExit.Radius = 1
         Me.btnExit.Size = New System.Drawing.Size(50, 50)
         Me.btnExit.TabIndex = 3
-        Me.btnExit.Text = "..."
+        Me.btnExit.Text = "×"
         Me.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnIkonize
@@ -179,7 +218,7 @@ Partial Class Main
         Me.btnIkonize.Margin = New System.Windows.Forms.Padding(0)
         Me.btnIkonize.mmForeColor = System.Drawing.Color.White
         Me.btnIkonize.Name = "btnIkonize"
-        Me.btnIkonize.nForeColor = System.Drawing.Color.White
+        Me.btnIkonize.nForeColor = System.Drawing.Color.Black
         Me.btnIkonize.Radius = 1
         Me.btnIkonize.Size = New System.Drawing.Size(50, 50)
         Me.btnIkonize.TabIndex = 2
@@ -240,41 +279,6 @@ Partial Class Main
         '
         Me.tmrMouseCheck.Enabled = True
         Me.tmrMouseCheck.Interval = 10
-        '
-        'btnMovie3
-        '
-        Me.btnMovie3.AutoEllipsis = True
-        Me.btnMovie3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(237, Byte), Integer))
-        Me.btnMovie3.ExcludedCorners = 0
-        Me.btnMovie3.Font = New System.Drawing.Font("Times New Roman", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.btnMovie3.ForeColor = System.Drawing.Color.Black
-        Me.btnMovie3.Location = New System.Drawing.Point(3, 125)
-        Me.btnMovie3.Margin = New System.Windows.Forms.Padding(0, 3, 0, 0)
-        Me.btnMovie3.mmForeColor = System.Drawing.Color.White
-        Me.btnMovie3.Name = "btnMovie3"
-        Me.btnMovie3.nForeColor = System.Drawing.Color.Black
-        Me.btnMovie3.Radius = 0
-        Me.btnMovie3.Size = New System.Drawing.Size(153, 26)
-        Me.btnMovie3.TabIndex = 7
-        Me.btnMovie3.Text = "Starred Movie 3"
-        Me.btnMovie3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnBrowse
-        '
-        Me.btnBrowse.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(249, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.btnBrowse.ExcludedCorners = 12
-        Me.btnBrowse.Font = New System.Drawing.Font("Times New Roman", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel)
-        Me.btnBrowse.ForeColor = System.Drawing.Color.Black
-        Me.btnBrowse.Location = New System.Drawing.Point(56, 280)
-        Me.btnBrowse.Margin = New System.Windows.Forms.Padding(0, 0, 3, 0)
-        Me.btnBrowse.mmForeColor = System.Drawing.Color.White
-        Me.btnBrowse.Name = "btnBrowse"
-        Me.btnBrowse.nForeColor = System.Drawing.Color.Black
-        Me.btnBrowse.Radius = 1
-        Me.btnBrowse.Size = New System.Drawing.Size(50, 50)
-        Me.btnBrowse.TabIndex = 8
-        Me.btnBrowse.Text = "×"
-        Me.btnBrowse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Main
         '
